@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+/* 《在环》十卷排版表 —— 中文 serif 正文，卷/章分页，表格与票据用等宽。 */
+
+html {
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+body {
+  font-family: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", "Georgia", serif;
+  font-size: 1em;
+  line-height: 1.92;
+  color: #1c1c1c;
+  background: transparent;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  line-break: strict;
+  word-break: normal;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+}
+
+main { display: block; }
+
+p {
+  margin: 0;
+  text-indent: 2em;
+  orphans: 2;
+  widows: 2;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0;
+  text-indent: 0;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+/* 卷首 */
+h1.volhead {
+  page-break-before: always;
+  break-before: page;
+  text-align: center;
+  font-size: 1.75em;
+  letter-spacing: 0.14em;
+  text-indent: 0.14em;
+  margin: 2.4em 0 2.6em;
+  font-weight: 700;
+}
+
+body.titlepage h1.booktitle {
+  page-break-before: avoid;
+  break-before: auto;
+  margin-top: 4em;
+  font-size: 2.8em;
+  letter-spacing: 0.36em;
+  text-indent: 0.36em;
+}
+
+p.booksub {
+  text-align: center;
+  text-indent: 0.5em;
+  letter-spacing: 0.5em;
+  margin-top: 1.6em;
+  font-size: 1.06em;
+}
+
+p.bookyears {
+  text-align: center;
+  text-indent: 0;
+  letter-spacing: 0.12em;
+  margin-top: 0.8em;
+  font-size: 0.9em;
+  color: #5a5a5a;
+}
+
+/* 章 */
+h2 {
+  page-break-before: always;
+  break-before: page;
+  text-align: center;
+  font-size: 1.2em;
+  letter-spacing: 0.08em;
+  text-indent: 0.08em;
+  margin: 2.1em 0 1.7em;
+}
+
+h2.filehead {
+  font-size: 1.14em;
+  margin: 1.9em 0 1.5em;
+}
+
+h3 {
+  font-size: 1.04em;
+  margin: 1.6em 0 0.8em;
+  text-align: left;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.3em 0 0.6em;
+  font-weight: 600;
+}
+
+/* 标题之后的第一段顶格，中文书页常规 */
+h1 + p, hr + p, blockquote + p, table + p {
+  text-indent: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 0;
+  margin: 2.6em auto;
+  text-align: center;
+  text-indent: 0;
+}
+
+hr::after {
+  content: "＊";
+  color: #9a9a9a;
+  font-size: 0.8em;
+  letter-spacing: 0.6em;
+}
+
+blockquote {
+  margin: 1.15em 0 1.15em 1.9em;
+  padding: 0 0 0 1em;
+  border-left: 2px solid #bcbcb8;
+  font-size: 0.93em;
+  line-height: 1.8;
+  color: #333;
+}
+
+blockquote p {
+  text-indent: 0;
+  margin: 0.4em 0;
+}
+
+pre, code, .ticket {
+  font-family: "SF Mono", Menlo, Consolas, "Courier New", monospace;
+  font-size: 0.84em;
+}
+
+pre {
+  margin: 1.2em 0.8em;
+  padding: 0.9em 1em;
+  background: #f5f5f2;
+  border: 1px solid #e2e2dc;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  text-align: left;
+  text-indent: 0;
+  page-break-inside: avoid;
+}
+
+/* 卷六的流水票据行 */
+p.ticket {
+  text-indent: 0;
+  margin: 0.08em 0;
+  color: #4a4a4a;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  font-size: 0.86em;
+  line-height: 1.5;
+  page-break-inside: auto;
+}
+
+tr { page-break-inside: avoid; break-inside: avoid; }
+
+th, td {
+  border: 1px solid #ababa6;
+  padding: 0.3em 0.62em;
+  text-align: left;
+  text-indent: 0;
+  vertical-align: top;
+}
+
+th {
+  background: #f0f0ec;
+  font-weight: 600;
+  text-align: center;
+}
+
+td.center, th.center { text-align: center; }
+td.right { text-align: right; font-variant-numeric: tabular-nums; }
+td.left { text-align: left; }
+
+ol, ul {
+  margin: 0.7em 0 0.7em 2em;
+  padding: 0;
+}
+
+li { text-indent: 0; margin: 0.25em 0; }
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* 目录 */
+body.toc { text-align: left; }
+
+h1.toctitle {
+  page-break-before: avoid;
+  break-before: auto;
+  text-align: center;
+  font-size: 1.6em;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  margin: 2.2em 0 2.4em;
+}
+
+nav#toc ol {
+  list-style: none;
+  margin: 0 0.8em;
+  padding: 0;
+}
+
+nav#toc > ol > li.vol {
+  margin: 1.7em 0 0.6em;
+  font-size: 1.08em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  page-break-inside: avoid;
+}
+
+nav#toc ol ol {
+  list-style: none;
+  margin: 0.2em 0 0 1.3em;
+  padding: 0;
+  font-weight: 400;
+  font-size: 0.94em;
+}
+
+nav#toc li.lv2 { margin: 0.3em 0; }
+nav#toc li.lv2f { margin: 0.55em 0 0.3em; font-weight: 600; }
+nav#toc li.lv3 { margin: 0.18em 0 0.18em 1.1em; font-size: 0.93em; color: #4c4c4c; }
+nav#toc a { text-decoration: none; color: inherit; }
+
+@page { margin: 7% 8%; }
+
+/* 五种字面：注释楷体、文书（卷三/卷七）仿宋、机器等宽 —— 与打印轨同口径 */
+p.note {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "Noto Serif CJK SC", serif;
+  font-size: 0.92em;
+  line-height: 1.7;
+  text-indent: 0;
+  margin: 0.55em 0 0.75em;
+  color: #3a3a3a;
+}
+p.note strong { font-family: "Heiti SC", "SimHei", "Noto Sans CJK SC", sans-serif; font-weight: 700; }
+body.v03, body.v07 { font-family: "FangSong", "STFangsong", "Songti SC", "Noto Serif CJK SC", serif; }
+body.v03 p, body.v07 p { text-indent: 0; margin: 0 0 0.45em; line-height: 1.86; }
+pre {
+  font-family: "DejaVu Sans Mono", "Consolas", "Noto Sans Mono CJK SC", monospace;
+  font-size: 0.85em;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  background: #f6f5f1;
+  padding: 0.7em 0.9em;
+  margin: 1em 0;
+  border-left: 2px solid #586876;
+}

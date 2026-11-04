@@ -1,0 +1,22 @@
+# 密钥与本地状态
+_keys.json
+*.key
+.env
+
+# 工作区临时件
+archive/
+scratch/
+logs/
+__pycache__/
+*.pyc
+_epub_build/
+
+# 排版页面临时渲染
+typst/view/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 外部技能包（各自独立仓库）
+De-AI-Prompt-Enhancer-Writer-Booster-SKILL/
